@@ -1,0 +1,12 @@
+<!--<div class="cards">-->
+<!--  <div class="cards_col" *ngFor="let meeting of meetings">-->
+<!--&lt;!&ndash;    <app-meeting-card [meeting]="meeting"></app-meeting-card>&ndash;&gt;-->
+<!--    <app-invite-card></app-invite-card>-->
+<!--  </div>-->
+<!--</div>-->
+
+<app-grid-list>
+  <app-invite-card class="app-grid-list-wrapper__element" *ngFor="let meeting of meetings" ></app-invite-card>
+</app-grid-list>
+
+

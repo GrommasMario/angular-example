@@ -1,0 +1,64 @@
+.card {
+  width: 300px;
+  height: 450px;
+  background-color: #d9d9d9;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card__nickname{
+  align-self: center;
+}
+
+.card__image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  align-self: center;
+  object-fit: cover;
+}
+
+.card__information__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 50px;
+}
+
+.card__buttonList {
+  position: absolute;
+  bottom: 20px;
+  height: 70px;
+  align-self: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.card__buttonList__button{
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.card__button--remove {
+  background-color: #d35353;
+}
+
+.card__button--remove:hover{
+  background-color: #ad4343;
+}
+
+.card__button--add {
+  background-color: #82d353;
+}
+
+.card__button--add:hover {
+  background-color: #6aab43;
+}
+
+

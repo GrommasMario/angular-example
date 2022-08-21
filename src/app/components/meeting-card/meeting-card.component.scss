@@ -1,0 +1,60 @@
+$meeting-card-width: 200px;
+$meeting-card-height: 220px;
+
+.meeting_information {
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  background-image: linear-gradient(
+      rgb(40, 40, 40),
+      85%,
+      rgba(0, 0, 0, 0)
+  );
+  color: #c7c7c7;
+  z-index: 2;
+}
+
+.meeting_card {
+  position: relative;
+  width: $meeting-card-width;
+  height: $meeting-card-height;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: all .2s;
+}
+
+.meeting_card:hover {
+  cursor: pointer;
+  width: $meeting-card-width * 1.1;
+  box-shadow: 0 8px 20px 10px #696969;
+
+}
+
+.meeting_image{
+  width: 100%;
+  height: $meeting-card-height;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
+
+.player_amount {
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.meeting_date {
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 1300px){
+  .meeting_card {
+    width: $meeting-card-width * 0.8;
+    height: $meeting-card-height* 0.8;
+  }
+}

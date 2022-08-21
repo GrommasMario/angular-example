@@ -1,0 +1,15 @@
+
+<div class="wrapper" *ngIf="[].length">
+  <h1>Заявки в друзья</h1>
+  <hr>
+  <app-grid-list>
+    <app-friend-card [isRequest]="true" class="app-grid-list-wrapper__element" *ngFor="let x of []"></app-friend-card>
+  </app-grid-list>
+</div>
+<div class="wrapper">
+  <h1>Друзья</h1>
+  <hr>
+  <app-grid-list>
+    <app-friend-card class="app-grid-list-wrapper__element" *ngFor="let x of ['Никита', 'Костя','Саня','Ярик', 'Темный', 'Светлый']" [name]="x"></app-friend-card>
+  </app-grid-list>
+</div>

@@ -1,0 +1,9 @@
+<app-grid-list>
+  <app-invite-card class="app-grid-list-wrapper__element"
+                   (onDecline)="toCancel(meeting.id)"
+                   [meeting]="meeting"
+                   *ngFor="let meeting of meetingService.getList() | async" ></app-invite-card>
+  <div class="card_plus app-grid-list-wrapper__element">
+    <button routerLink="new">+</button>
+  </div>
+</app-grid-list>

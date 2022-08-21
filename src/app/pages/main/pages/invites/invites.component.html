@@ -1,0 +1,8 @@
+<app-grid-list>
+  <app-invite-card class="app-grid-list-wrapper__element"
+                   (onApprove)="toApprove(invite.id)"
+                   (onDecline)="toDecline(invite.id)"
+                   [meeting]="invite.meeting"
+                   [inviteId]="invite.id"
+                   *ngFor="let invite of invitesService.getList() | async" ></app-invite-card>
+</app-grid-list>

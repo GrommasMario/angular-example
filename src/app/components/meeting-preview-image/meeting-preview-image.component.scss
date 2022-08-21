@@ -1,0 +1,16 @@
+$meeting-preview-image: 200px;
+
+.preview-image__container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+}
+
+.meetingSearch__informationPanel__preview__image{
+  object-fit: cover;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #494949;
+}

@@ -1,0 +1,42 @@
+<div class="signButtonList">
+  <button (click)="toSignUp()" class="signButtonList__button signUpButton">Регистрация</button>
+  <button (click)="toSignIn()" class="signButtonList__button signInButton">Вход</button>
+</div>
+
+<app-modal *ngIf="modalType === 'signUp'" (onClose)="modalType = null" id="44" [isOpen]="true" width="400px">
+  <div class="registration">
+    <form [formGroup]="formSignUp" class="registration__form">
+      <h1>Регистрация</h1>
+
+      <label for="nickname">Никнейм</label>
+      <input formControlName="nickname" id="nickname" class="registration__form__input" type="text">
+
+      <label for="email">Почта</label>
+      <input formControlName="email" id="email" class="registration__form__input" type="email">
+
+      <label for="password">Пароль</label>
+      <input formControlName="password" id="password" class="registration__form__input" type="password">
+
+      <label for="passwordRepeat">Повтор пароля</label>
+      <input formControlName="passwordRepeat" id="passwordRepeat" class="registration__form__input" type="password">
+
+      <button (click)="signUp()" class="registration__form__button" type="submit">Подтвердить</button>
+    </form>
+  </div>
+</app-modal>
+
+<app-modal [formGroup]="formSignIn" *ngIf="modalType === 'signIn'" (onClose)="modalType = null" [isOpen]="true" width="400px">
+  <div class="registration">
+    <form class="registration__form">
+      <h1>Вход</h1>
+
+      <label for="emailSign">Почта</label>
+      <input formControlName="email" id="emailSign" class="registration__form__input" type="email">
+
+      <label for="passwordSign">Пароль</label>
+      <input formControlName="password" id="passwordSign" class="registration__form__input" type="password">
+
+      <button (click)="signIn()" class="registration__form__button" type="submit">Войти</button>
+    </form>
+  </div>
+</app-modal>

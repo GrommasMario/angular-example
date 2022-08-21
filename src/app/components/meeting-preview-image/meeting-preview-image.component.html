@@ -1,0 +1,9 @@
+  <div class="preview-image__container">
+    <img class="meetingSearch__informationPanel__preview__image empty-image" *ngFor="let preview of meetingImagePreview.reverse()"
+         [src]="preview.imageUrl"
+         [style.width]="preview.size"
+         [style.height]="preview.size"
+         [style.top]="preview.top"
+         [style.filter]="'brightness('+preview.brightness+')'"
+    >
+  </div>

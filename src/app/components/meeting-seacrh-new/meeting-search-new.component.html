@@ -1,0 +1,50 @@
+<div class="meetingSearch">
+  <div class="meetingSearch__informationPanel">
+    <div class="meetingSearch__informationPanel__preview">
+      <app-meeting-preview-image [meetingImagePreview]="meetingImagePreview"></app-meeting-preview-image>
+    </div>
+    <form class="meetingSearch__informationPanel__detail">
+      <div class="inputContainer">
+        <span class="inputContainer__title">Город</span>
+        <div class="inputContainer__wrapper"><input class="input-visible" type="text" name="city"></div>
+      </div>
+      <div class="inputContainer">
+        <span class="inputContainer__title">Место</span>
+        <div class="inputContainer__wrapper"><input class="input-visible" type="text" name="place"></div>
+      </div>
+      <div class="inputContainer">
+        <span class="inputContainer__title">Дата</span>
+        <div class="inputContainer__wrapper"><input class="input-visible" type="date" name="date"></div>
+      </div>
+      <div class="inputContainer">
+        <span class="inputContainer__title">Время</span>
+        <div class="inputContainer__wrapper"><input class="input-visible" type="time" name="time"></div>
+      </div>
+      <div class="inputContainer">
+        <span class="inputContainer__title">Число игроков</span>
+        <div class="inputContainer__wrapper"><input class="input-visible" type="number" name="playerAmount"></div>
+      </div>
+    </form>
+    <button class="meetingSearch__informationPanel__button">✔</button>
+  </div>
+  <div class="meetingSearch__selectedGamesPanel">
+    <div class="meetingSearch__selectedGamesPanel__container">
+      <app-game-card
+        *ngFor="let game of selectedGames"
+        [game]="game"
+      ></app-game-card>
+      <app-game-card (click)="toAddGames()" [isButton]="true" defaultEmptyImage="https://www.pngmart.com/files/8/Plus-Transparent-PNG.png"></app-game-card>
+    </div>
+  </div>
+</div>
+<app-modal #modalComponent width="1000px">
+  <div class="searchPanel">
+    <div class="searchPanel__container">
+      <input class="searchPanel__container__input" type="text">
+      <button class="searchPanel__container__button" >поиск</button>
+    </div>
+    <div class="searchPanel__elements">
+      <app-game-card (click)="enterSearchedGames(game)" class="searchPanel__elements__card" *ngFor="let game of searchedGames" [game]="game"></app-game-card>
+    </div>
+  </div>
+</app-modal>

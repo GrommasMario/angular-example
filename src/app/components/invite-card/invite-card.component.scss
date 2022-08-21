@@ -1,0 +1,154 @@
+.inviteCard {
+  display: grid;
+  grid-template-areas: "preview"
+                       "information";
+  grid-template-rows: 40% 60%;
+  grid-template-columns: 100%;
+  margin: 20px;
+  border-radius:5px;
+  transition: all .2s;
+  min-width: 200px;
+}
+
+.inviteCard > .inviteCard__preview {
+  grid-area: preview;
+}
+
+.inviteCard > .inviteCard__container {
+  grid-area: information;
+}
+
+.inviteCard__container{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  z-index: 101;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.inviteCard__preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.inviteCard__preview__information {
+  display: flex;
+  position: relative;
+  z-index: 101;
+  justify-content: space-between;
+
+  h4 {
+    margin: 5px;
+  }
+}
+
+.inviteCard__preview__information__text{
+  background-color: black;
+  opacity: .8;
+  color: whitesmoke;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.inviteCard__preview__image {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -10px;
+  z-index: 100;
+  width: 100%;
+}
+
+.inviteCard__buttonList {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  z-index: 101;
+  bottom: 0;
+  width: 100%;
+}
+
+.inviteCard__button {
+  width: 40px;
+  height: 40px;
+  transition: all .2s;
+  border: none;
+}
+.inviteCard__button:hover {
+  cursor: pointer;
+}
+
+.inviteCard__button:active {
+  cursor: pointer;
+}
+
+.inviteCard__button__left{
+  border-radius: 0 100% 0 10px;
+  background-color: #d35353;
+}
+
+.inviteCard__button__left:hover {
+  background-color: #ad4343;
+}
+
+.inviteCard__button__right {
+  border-radius: 100% 0 10px 0;
+  background-color: #82d353;
+
+}
+.inviteCard__button__right:hover {
+  background-color: #6aab43;
+}
+
+h4 {
+  margin: 0;
+}
+
+.inviteCard__information {
+  position: relative;
+}
+
+.inviteCard__information__player {
+  display: flex;
+  padding: 5px;
+  margin: 10px 5px;
+  background-color: #d5d5d5;
+  border-radius: 10px;
+  height: 30px;
+  justify-content: space-between;
+}
+
+.inviteCard__information__player__avatar{
+  border-radius: 50%;
+  margin: 2px;
+}
+.inviteCard__information__player__rating__wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: whitesmoke;
+  width: 30px;
+  border-radius: 50%;
+}
+.inviteCard__information__player__rating {
+  text-align: center;
+  align-self: center;
+}
+
+.inviteCard__information__meeting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+
+  h4 {
+    margin: 10px;
+  }
+}

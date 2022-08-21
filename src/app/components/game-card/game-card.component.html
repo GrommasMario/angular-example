@@ -1,0 +1,20 @@
+<div class="card">
+  <div *ngIf="game" [@hoverOnImage]="hover" [@hoverOffImage]="hover" class="card__information">
+    <div class="card__information__scope">
+      <h4>{{(game.title.length>24)? (game.title | slice:0:24)+'..':(game.title)}}</h4>
+      <h4>{{game.rating}}</h4>
+    </div>
+    <div class="card__information__scope">
+      <h4 *ngIf="game.playerMinimum !== game.playerMaximum">{{game.playerMinimum}}-{{game.playerMaximum}}</h4>
+      <h4 *ngIf="game.playerMinimum === game.playerMaximum">{{game.playerMaximum}}</h4>
+      <h4>{{game.duration}}м</h4>
+    </div>
+  </div>
+
+  <img [@hoverOnInformation]="hover"
+         [@hoverOffInformation]="hover"
+         *ngIf="game" class="card__image card__image--filled" [src]="game.imageUrl" alt="">
+  <img [@hoverOnInformation]="hover"
+       [@hoverOffInformation]="hover"
+       *ngIf="!game" class="card__image card__image--empty" [src]="defaultEmptyImage" alt="">
+</div>

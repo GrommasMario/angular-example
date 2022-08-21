@@ -1,0 +1,56 @@
+.registration__form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #363636;
+  padding: 10px 50px;
+  border-radius: 15px;
+}
+
+.registration__form  > label{
+  color: whitesmoke;
+}
+
+.registration__form  > h1{
+  color: whitesmoke;
+  align-self: center;
+  margin: 20px;
+}
+
+.registration__form__input{
+  margin: 20px 5px;
+  height: 25px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16pt;
+  text-align: center;
+}
+
+.registration__form__button {
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  align-self: center;
+  padding: 0 10px;
+  margin: 10px;
+}
+
+.signButtonList {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: space-around;
+}
+
+.signButtonList__button{
+  width: 400px;
+  height: 150px;
+  align-self: center;
+  border-radius: 40px;
+  border: none;
+  font-size: 21pt;
+}

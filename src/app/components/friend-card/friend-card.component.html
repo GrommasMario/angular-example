@@ -1,0 +1,19 @@
+<div class="card">
+  <h1 class="card__nickname">{{name}}</h1>
+  <img class="card__image" src="https://www.swissinfo.ch/resource/crblob/45888780/ae8760c0c120e7ba789052a1d1649978/profile_neutral-png-data.png" alt="">
+  <div class="card__information">
+    <div class="card__information__row">
+      <h2 class="card__information__row__item">
+        {{friend.gameAmount}}
+      </h2>
+      <h2 class="card__information__row__item">
+        {{friend.rating}}
+      </h2>
+    </div>
+  </div>
+  <div class="card__buttonList">
+    <button *ngIf="isRequest" class="card__buttonList__button card__button--remove"></button>
+    <button class="card__buttonList__button card__button--{{isRequest ? 'add' : 'remove'}}"></button>
+  </div>
+
+</div>

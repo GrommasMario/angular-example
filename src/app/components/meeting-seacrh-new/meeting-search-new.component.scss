@@ -1,0 +1,161 @@
+.meetingSearch {
+  display: grid;
+  min-width: 930px;
+  width: 100%;
+  height: 100%;
+  grid-template-areas: "information"
+                       "games";
+  grid-template-rows: auto 1fr;
+}
+
+.meetingSearch > meetingSearch__informationPanel {
+  grid-area: information;
+}
+
+.meetingSearch > meetingSearch__selectedGamesPanel {
+  grid-area: games;
+}
+
+.meetingSearch__informationPanel {
+  display: flex;
+  justify-content: space-around;
+  height: 300px;
+  overflow: hidden;
+  background-color: rgba(206, 206, 206, 0.19);
+  align-items: center;
+  border-radius: 10px;
+}
+
+.meetingSearch__informationPanel__button {
+  width: 100px;
+  height: 100px;
+  font-size: 24pt;
+  margin-right: 100px;
+  background-color: whitesmoke;
+  outline: none;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+.meetingSearch__informationPanel__button:hover {
+  border-radius: 25px;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.meetingSearch__informationPanel__button:active {
+  border-radius: 35px;
+  background-color: #7ac2ff;
+}
+
+.meetingSearch__informationPanel__button:hover:active:focus {
+  outline: none;
+  border: none;
+}
+
+.meetingSearch__informationPanel__preview {
+  min-width: 200px;
+  outline: none;
+  border: none;
+  margin: 0 40px;
+}
+
+.meetingSearch__informationPanel__detail {
+  margin: auto;
+  width: 400px;
+  background-color: whitesmoke;
+  padding: 20px;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+.meetingSearch__informationPanel__detail:focus-within {
+  border-radius: 20px;
+}
+
+.inputContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.input-visible {
+  border-radius: 3px;
+  font-size: 15pt;
+  border: none;
+  outline: none;
+  background-color: rgba(248, 248, 255, 0);
+  color: black;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+.inputContainer__title{
+  font-size: 16pt;
+  color: black;
+}
+
+.meetingSearch__selectedGamesPanel {
+  padding: 50px;
+  overflow: scroll;
+}
+
+.meetingSearch__selectedGamesPanel__container {
+  display: flex;
+  width: 100%;
+}
+
+///-----------------------/
+
+.searchPanel {
+  width: 100%;
+}
+
+.searchPanel__container{
+  display: flex;
+  padding: 20px;
+  background-color: #3f3d3d;
+  border-radius: 15px;
+}
+.searchPanel__container__input {
+  width: 100%;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  background-color: ghostwhite;
+  font-size: 18px;
+  transition: all .2s;
+  margin: 0 10px;
+  padding: 2px;
+}
+
+.searchPanel__container__button {
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: ghostwhite;
+  padding: 5px;
+  font-size: 21px;
+  transition: all .2s;
+}
+
+.searchPanel__container__button:hover {
+  background-color: #e9e9fd;
+  cursor: pointer;
+}
+
+
+.searchPanel__elements {
+  display: table;
+  clear: both;
+  width: 100%;
+  overflow: scroll;
+}
+
+.searchPanel__elements__card{
+  width: 20%;
+  margin: 20px;
+  float: left;
+}
+
+

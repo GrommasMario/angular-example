@@ -1,0 +1,19 @@
+<div class="side-wrapper">
+  <div class="header">
+    <img src="https://waterland.nu/media/pages/about/team/arni-ramdhani/499bba79cd-1635805372/male.png">
+    <h1 style="color: #c7c7c7">{{(signService.getUser() | async)?.nickname}}</h1>
+  </div>
+  <div class="side">
+    <div class="side_button_list" style="margin-top: 25px">
+      <button style="margin: 5px 0" *ngFor="let button of sideButtons" class="side_button" [routerLink]="button.link">{{button.title}}</button>
+    </div>
+    <div class="side_logo">
+      <div style="color: #a65757">T</div>
+      <div style="color: #a65757; margin-top: -35px; font-size: 82px">G</div>
+      <div style="color: #a65757; margin-top: -35px">S</div>
+    </div>
+  </div>
+  <div class="footer">
+    <button (click)="exit()"  class="side_button side_button_setting">ВЫХОД</button>
+  </div>
+</div>
