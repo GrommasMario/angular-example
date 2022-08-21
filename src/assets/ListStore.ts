@@ -1,23 +1,24 @@
-import {IStoreList} from "../app/Interfaces/IStoreList";
-import {BehaviorSubject} from "rxjs";
+import { BehaviorSubject } from 'rxjs';
+import { IStoreList } from '../app/Interfaces/IStoreList';
 
-export class ListStore<T extends {id: number}> implements IStoreList<T>{
-  protected readonly list = new BehaviorSubject<T[]>([]);
-  protected readonly list$ = this.list.asObservable();
+export class ListStore<T extends { id: number }> implements IStoreList<T> {
+    protected readonly list = new BehaviorSubject<T[]>([]);
 
-  getList(){
-    return this.list$;
-  }
+    protected readonly list$ = this.list.asObservable();
 
-  fillList(invites: T[]){
-    this.list.next(invites);
-  }
+    getList() {
+        return this.list$;
+    }
 
-  addToStoreList(item: T): void {
-    this.list.next([...this.list.value, item]);
-  }
+    fillList(invites: T[]) {
+        this.list.next(invites);
+    }
 
-  dropFromStoreList(id: number){
-    this.list.next([...this.list.value.filter(v => v.id !== id)]);
-  }
+    addToStoreList(item: T): void {
+        this.list.next([...this.list.value, item]);
+    }
+
+    dropFromStoreList(id: number) {
+        this.list.next([...this.list.value.filter((v) => v.id !== id)]);
+    }
 }

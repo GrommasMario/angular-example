@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "eslint \"src/**/*.ts\" --fix"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,15 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "eslint": "8.22.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "@typescript-eslint/eslint-plugin": "5.31.0",
+    "@typescript-eslint/parser": "5.31.0",
+    "prettier": "2.7.1",
     "@angular-devkit/build-angular": "~13.3.2",
     "@angular/cli": "~13.3.2",
     "@angular/compiler-cli": "~13.3.0",

@@ -1,3 +1,3 @@
-export default function(variable?: unknown) {
-  return variable !== undefined && variable !== null;
+export default function isWorking(variable?: unknown) {
+    return variable !== undefined && variable !== null;
 }

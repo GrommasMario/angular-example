@@ -1,40 +1,33 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {InviteHttpIn} from "../../../../Interfaces/InviteHttpIn";
-import {AbstractHttpService} from "../../../../http-services/AbstractHttpService";
-import {InvitesHttpMock} from "./invites.http-mock";
-import {Observable} from "rxjs";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { IInviteHttpIn } from '../../../../Interfaces/IInviteHttpIn';
+import { AbstractHttpService } from '../../../../http-services/AbstractHttpService';
+
+export interface IInvitesHttpService {
+    getList(): Observable<Array<IInviteHttpIn>>;
+    approveInvite(id: number): Observable<IInviteHttpIn>;
+    declineInvite(id: number): Observable<IInviteHttpIn>;
+}
 
 @Injectable()
-export class InvitesHttpService extends AbstractHttpService {
-  private mockService = new InvitesHttpMock();
-
-  constructor(readonly httpClient: HttpClient) {
-    super();
-  }
-
-  getList(){
-    if(this.mockIsOn){
-      return this.mockService.getList()
-    } else {
-      return this.httpClient.get<InviteHttpIn[]>('');
+export class InvitesHttpService
+    extends AbstractHttpService
+    implements IInvitesHttpService
+{
+    constructor(readonly httpClient: HttpClient) {
+        super();
     }
-  }
 
-  approveInvite(id: number){
-    if(this.mockIsOn){
-      return this.mockService.getById(id);
-    } else {
-      return this.httpClient.put<InviteHttpIn>('', {});
+    getList() {
+        return this.httpClient.get<IInviteHttpIn[]>('');
     }
-  }
 
-  declineInvite(id: number){
-    if(this.mockIsOn){
-      return this.mockService.getById(id);
-    } else {
-      return this.httpClient.delete<InviteHttpIn>('', {});
+    approveInvite(id: number) {
+        return this.httpClient.put<IInviteHttpIn>('', {});
     }
-  }
 
+    declineInvite(id: number) {
+        return this.httpClient.delete<IInviteHttpIn>('', {});
+    }
 }

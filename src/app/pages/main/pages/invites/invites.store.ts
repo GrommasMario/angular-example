@@ -1,4 +1,4 @@
-import {Invite} from "../../../../models/Invite";
-import {ListStore} from "../../../../../assets/ListStore";
+import { Invite } from '../../../../models/Invite';
+import { ListStore } from '../../../../../assets/ListStore';
 
-export class InvitesStore extends ListStore<Invite>{}
+export class InvitesStore extends ListStore<Invite> {}

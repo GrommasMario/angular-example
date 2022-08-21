@@ -1,31 +1,28 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {AbstractHttpService} from "../../../../http-services/AbstractHttpService";
-import {Meeting} from "../../../../models/Meeting";
-import {MeetingsHttpMock} from "./meetings.http-mock";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AbstractHttpService } from '../../../../http-services/AbstractHttpService';
+import { IMeetingHttpIn } from '../../../../Interfaces/IMeetingHttpIn';
+
+export interface IMeetingsHttpService {
+    getList(): Observable<Array<IMeetingHttpIn>>;
+    cancelMeeting(id: number): Observable<IMeetingHttpIn>;
+}
 
 @Injectable()
-export class MeetingsHttpService extends AbstractHttpService {
-  private mockService = new MeetingsHttpMock();
-
-  constructor(protected readonly httpClient: HttpClient) {
-    super();
-  }
-
-  getList(){
-    if(this.mockIsOn){
-      return this.mockService.getList();
-    } else {
-      return this.httpClient.get<Meeting[]>('');
+export class MeetingsHttpService
+    extends AbstractHttpService
+    implements IMeetingsHttpService
+{
+    constructor(protected readonly httpClient: HttpClient) {
+        super();
     }
-  }
 
-  cancelMeeting(id: number){
-    if(this.mockIsOn){
-      return this.mockService.getById(id);
-    } else {
-      return this.httpClient.delete<Meeting>('');
+    getList() {
+        return this.httpClient.get<IMeetingHttpIn[]>('');
     }
-  }
 
+    cancelMeeting(id: number) {
+        return this.httpClient.delete<IMeetingHttpIn>('');
+    }
 }

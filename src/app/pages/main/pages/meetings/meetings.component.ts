@@ -1,21 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import {MeetingsService} from "./meetings.service";
+import { MeetingsService } from './meetings.service';
 
 @Component({
-  selector: 'app-meetings',
-  templateUrl: './meetings.component.html',
-  styleUrls: ['./meetings.component.scss']
+    selector: 'app-meetings',
+    templateUrl: './meetings.component.html',
+    styleUrls: ['./meetings.component.scss'],
 })
 export class MeetingsComponent implements OnInit {
+    constructor(readonly meetingService: MeetingsService) {}
 
-  constructor(readonly meetingService: MeetingsService) { }
+    ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  toCancel(id: number){
-    this.meetingService.cancelMeeting(id);
-  }
-
+    toCancel(id: number) {
+        this.meetingService.cancelMeeting(id);
+    }
 }
-

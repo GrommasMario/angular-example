@@ -1,13 +1,15 @@
-import {UserHttp} from "../Interfaces/UserHttp";
+import { UserHttp } from '../Interfaces/UserHttp';
 
 export class User {
-  id!: number;
-  nickname!: string;
-  email!: string;
+    id!: number;
 
-  constructor(user: UserHttp) {
-    this.id = user.id;
-    this.nickname = user.nickname;
-    this.email = user.email;
-  }
+    nickname!: string;
+
+    email!: string;
+
+    constructor(user: UserHttp) {
+        this.id = user.id;
+        this.nickname = user.nickname;
+        this.email = user.email;
+    }
 }
